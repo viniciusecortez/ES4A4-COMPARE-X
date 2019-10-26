@@ -5,9 +5,10 @@
     </head>
     <body>
         <h1>Comparex</h1>
+        l
         <form method="GET" th:action="@{/search}">
-            <label for="search"></label>
-            <input type="search">
+            <input name="pesquisar" type="search">
+            <button th:type="submit">Comparar</button>
         </form>
     </body>
 </html>
