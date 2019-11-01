@@ -1,4 +1,4 @@
-package br.edu.ifsp.lp2a2.comparex.comparex.comum.controllers;
+package br.edu.ifsp.lp2a2.comparex.comum.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
