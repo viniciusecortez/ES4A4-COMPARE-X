@@ -6,7 +6,9 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -17,23 +19,23 @@ public class PesquisarPreco {
     public void pagina_inicial(){
         this.driver = new PhantomJSDriver();
         this.driver.get("http://localhost:8080/");
-        String title = this.driver.getTitle();
+        String actual = this.driver.getTitle();
         String expected = "comparex";
-        assertTrue(title.toLowerCase().contains(expected));
+        assertTrue(actual.toLowerCase().contains(expected));
     }
-    @When("Eu digito dentro do campo {string}")
-    public void digito_no_campo(String name){
-        WebElement input = this.driver.findElement(By.cssSelector("input[name="+name+"]"));
-        String expected = "cano";
-        input.sendKeys(expected);
+    @When("Eu digito dentro do campo {string} o texto {string}")
+    public void digitar_algo(String where , String text){
+        WebElement input = this.driver.findElement(By.cssSelector("input[name="+where +"]"));
+        input.sendKeys(text);
         String actual = input.getAttribute("value");
-        assertEquals(expected, actual);
+        assertEquals(text, actual);
     }
-
     @And("clico no botão {string}")
-    public void click_botao(String textBotao){
-        WebElement button = this.driver.findElement(By.id(textBotao));
+    public void click_botao(String where){
+        WebElement button = this.driver.findElement(By.id(where));
         button.click();
     }
+
+
 
 }

@@ -6,6 +6,6 @@ Feature: Pesquisar os preços de um produto
   Scenario: Devo ter uma página inicial com um local para pesquisa de um produto
 
     Given Estou na página inicial da minha aplicação
-    When Eu digito dentro do campo "pesquisar"
+    When Eu digito dentro do campo "pesquisar" o texto "cano"
     And clico no botão "comparar"
     Then Devo ser redirecionado para a página "Resultados da busca"

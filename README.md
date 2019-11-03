@@ -10,24 +10,3 @@ NATHALIA FISCHER FINAZZI PORTO | SP3013464
 RAFAEL PEINADO DA SILVA | SP301326X
 THIAGO XAVIER RODRIGUES DE ALMEIDA | SP301343X
 VINICIUS EUSTAQUIO CORTEZ | SP3013146
-
-----
-
-## Como executar o projeto: 
-
-Para conseguir executar o projeto é necessário: 
-
-- Baixar JDK
-- Colocar o comando:
-  ```
-    ./gradlew bootRun
-  ```
-## Como executar tests
-* Testes de integração e unitários
-    ```
-     ./gradlew test
-    ```
-* Testes de end to end
-    ```
-     ./gradlew cucumber
-    ```
