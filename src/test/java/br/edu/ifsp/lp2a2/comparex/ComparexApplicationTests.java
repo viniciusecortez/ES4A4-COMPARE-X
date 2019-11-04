@@ -1,4 +1,4 @@
-package br.edu.ifsp.lp2a2.comparex.comparex;
+package br.edu.ifsp.lp2a2.comparex;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

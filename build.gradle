@@ -18,6 +18,11 @@ dependencies {
 	testImplementation "io.cucumber:cucumber-junit:${cucumberVersion}"
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'org.xerial:sqlite-jdbc:3.8.11.2'
+	compile 'com.enigmabridge:hibernate4-sqlite-dialect:0.1.2'
+	testImplementation 'com.codeborne:phantomjsdriver:1.4.4'
+	compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
@@ -35,9 +40,9 @@ task cucumber() {
     dependsOn assemble, compileTestJava
     doLast {
         javaexec {
-            main = "cucumber.api.cli.Main"
+            main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'pretty', '--glue', 'gradle.cucumber', 'src/test/resources']
+            args = ['--plugin', 'pretty', '--glue', 'br.edu.ifsp.lp2a2.comparex.e2e.steps', 'src/test/resources']
         }
     }
 }
