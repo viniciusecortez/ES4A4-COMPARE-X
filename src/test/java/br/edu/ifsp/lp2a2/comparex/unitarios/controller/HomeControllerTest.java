@@ -14,7 +14,7 @@ public class HomeControllerTest {
     public void index_return_template() {
         // Configuracao
         HomeController controller = new HomeController();
-        String actual = controller.index(new ProdutosRespository(), new Model());
+        String actual = controller.index();
         String expected = "comum/index";
         assertEquals(expected, actual);
     }
