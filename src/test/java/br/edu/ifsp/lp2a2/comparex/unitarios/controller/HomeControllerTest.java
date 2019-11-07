@@ -14,7 +14,7 @@ public class HomeControllerTest {
     public void index_return_template() {
         // Configuracao
         HomeController controller = new HomeController();
-        String actual = controller.index();
+        String actual = controller.list();
         String expected = "comum/index";
         assertEquals(expected, actual);
     }
