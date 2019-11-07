@@ -1,20 +1,24 @@
 package br.edu.ifsp.lp2a2.comparex.comum.controllers;
 
+import java.util.Random;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+
+import br.edu.ifsp.lp2a2.comparex.comum.model.entidades.ProdutosRespository;
+
 
 
 @Controller
 public class HomeController{
-   @GetMapping("/")
-   public String index(){
+    @GetMapping("/")
+    public String list(ProdutosRespository repository, Model model){
         return "comum/index";
-   }
+    }
    @GetMapping(value = "/search", params = {"pesquisar"})
-   public @ResponseBody String search(@RequestParam(value = "pesquisar") String pesquisar){
+   public String search(String pesquisar){
 
-       return pesquisar;
+       return "comum/resultado_busca";
    }
 }
