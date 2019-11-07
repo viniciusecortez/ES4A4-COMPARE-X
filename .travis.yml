@@ -2,8 +2,10 @@ dist: ubuntu
 language: java
 jdk:
  - oraclejdk8
+language: node_js
+node_js: 
+ 7
 before_script:
- - sudo apt install nodejs
  - npm install -g phantomjs
  - ./gradlew bootRun &
 script:
