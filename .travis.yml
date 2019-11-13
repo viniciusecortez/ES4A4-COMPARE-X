@@ -5,7 +5,7 @@ jdk:
 node_js: 
  7
  env:
-  - global:
+  global:
       - CC_TEST_REPORTER_ID=682ea1e79d2c9df44cf3f6cfb739b810b0ffcf7296a81a76ed5213f0046ac8fe
  
 before_script:
@@ -15,9 +15,6 @@ before_script:
  - npm install -g phantomjs
  - ./gradlew bootRun &
 script:
- - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
- - chmod +x ./cc-test-reporter
- - ./cc-test-reporter before-build
  - ./gradlew partTest
  - ./gradlew cucumber
 
